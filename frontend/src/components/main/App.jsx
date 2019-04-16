@@ -8,16 +8,16 @@ import Nav from '../template/Nav';
 import Main from '../template/Main';
 import Footer from '../template/Footer';
 import Home from '../home/Home';
-import { BrowserRouter } from 'react-router-dom';
+import { HashRouter } from 'react-router-dom';
 
 import Routes from './Routes';
 
 export default props =>
-    <BrowserRouter>
+    <HashRouter>
         <div className="app">
             <Logo />
             <Nav />
             <Routes />
             <Footer />
         </div>
-    </BrowserRouter>    
+    </HashRouter>    
