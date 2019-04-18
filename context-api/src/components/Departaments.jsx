@@ -1,6 +1,5 @@
 import React, { Component } from 'react' 
 
-import Loading from './Loading'
 import { getDepartaments } from '../service/api' 
  
 class Departments extends Component { 
@@ -8,10 +7,11 @@ class Departments extends Component {
         loading: false
     }
     getDepartaments = async () => { 
-        this.setState({loading: true})
+        const {showLoading, hideLoading} = this.props
+        showLoading('Loading Departaments')
         const response = await getDepartaments().then(
             response => {
-                this.setState({loading: false})
+                hideLoading()
                 return response
             }
         )
@@ -19,12 +19,8 @@ class Departments extends Component {
     } 
  
     render() { 
-        const {loading} = this.state
         return ( 
-            <React.Fragment>
-                <button onClick={this.getDepartaments}>Load Departaments</button> 
-                <Loading loading={loading} message="Loading Departaments..." />
-            </React.Fragment>
+            <button onClick={this.getDepartaments}>Load Departaments</button> 
         ) 
     } 
 } 
