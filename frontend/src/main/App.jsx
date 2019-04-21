@@ -5,6 +5,7 @@ import Sidebar from '../common/template/Sidebar'
 import Footer from '../common/template/Footer'
 import Routes from './Routes'
 import { HashRouter } from 'react-router-dom'
+import Messages from '../common/msg/Messages'
 
 export default props => (
     <HashRouter>
@@ -15,7 +16,8 @@ export default props => (
         <Routes />
         </div>
         <Footer></Footer>
-        </div>
+        <Messages></Messages>
+    </div>
 
     </HashRouter>
 )
